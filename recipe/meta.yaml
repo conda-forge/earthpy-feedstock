@@ -1,5 +1,5 @@
 {% set name = "earthpy" %}
-{% set version = "0.6.10" %}
+{% set version = "0.7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 18a94db247d7a094c2740542b83a5e6cea631161382846d8158b35ca66412b6e
+  sha256: 290e7dee76126d286ed7afa808e85a3e97874c950d71602ada9bc3bee8087839
 
 build:
   noarch: python
