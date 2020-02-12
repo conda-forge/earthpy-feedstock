@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
@@ -21,7 +21,7 @@ requirements:
   run:
     - python >=3
     - geopandas
-    - matplotlib >=2
+    - matplotlib-base >=2
     - numpy
     - pandas
     - rasterio
