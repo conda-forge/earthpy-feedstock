@@ -1,5 +1,5 @@
 {% set name = "earthpy" %}
-{% set version = "0.8.0" %}
+{% set version = "0.9.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ec0ddbea51a2d81d09d401279a54d80d29e0396116cfb26412cc5a27091a96eb
+  sha256: 86c14f79ea37d21e08026fc7994f9338c71c6f748dc1dc2fa3645fc27882d2c7
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
@@ -44,7 +44,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'Utility functions for the working with spatial data'
+  summary: Utility functions for the working with spatial data
 
   description: |
     A set of helper functions to make working with spatial data in open source
