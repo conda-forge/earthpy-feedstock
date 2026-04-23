@@ -6,20 +6,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 16ec2831ec87ace9d70473ef23840b6bf3cd239e178b9ddb5767da86e5a34c1b
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
-    - python >=3
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3
+    - python >={{ python_min }}
     - geopandas
     - matplotlib-base >=2
     - numpy
@@ -31,6 +31,8 @@ requirements:
 
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - earthpy
     - earthpy.clip
